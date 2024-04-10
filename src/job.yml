@@ -7,9 +7,9 @@ command: >-
 inputs:
   training_data:
     type: uri_folder
-    path: ../production/data
+    path: azureml:diabetes-last-training-data@latest
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
-compute: local
+compute: aml-cluster
 experiment_name: diabetes-train
 description: Job to train a diabetes model.

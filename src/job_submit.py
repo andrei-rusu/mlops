@@ -8,11 +8,11 @@ command_job = command(
     code="./src/model",
     command="python train.py --training_data ${{inputs.training_data}} --reg_rate ${{inputs.reg_rate}}",
     inputs={
-        "training_data": Input(type="uri_folder", path="azureml:diabetes-last-training-data:1"),
+        "training_data": Input(type="uri_folder", path="../production/data"),
         "reg_rate": 0.01
     },
     environment="AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest",
-    compute="aml-cluster",
+    compute="local",
     experiment_name="diabetes-train",
     description="Job to train a diabetes model."
 )
