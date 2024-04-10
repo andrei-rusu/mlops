@@ -21,7 +21,7 @@ jobs:
         python -m pip install flake8
     - name: Run linting tests
       run: | 
-        flake8
+        flake8 --config tests/.flake8
   job2:
     name: unit-testing
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
         python-version: '3.8'
     - name: Install pytest
       run: |
-        python -m pip install pytest
+        python -m pip install pytest mlflow
     - name: Run unit tests
       run: | 
         pytest
