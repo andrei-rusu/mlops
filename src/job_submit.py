@@ -8,7 +8,7 @@ command_job = command(
     code="./src/model",
     command="python train.py --training_data ${{inputs.training_data}} --reg_rate ${{inputs.reg_rate}}",
     inputs={
-        "training_data": Input(type="uri_folder", path="../production/data"),
+        "training_data": Input(type="uri_folder", path="../experimentation/data"),
         "reg_rate": 0.01
     },
     environment="AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest",
