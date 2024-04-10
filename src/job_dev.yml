@@ -7,8 +7,8 @@ command: >-
 inputs:
   training_data:
     type: uri_folder
-    path: azureml:diabetes-last-training-data@latest
-  reg_rate: 0.02
+    path: azureml:diabetes-dev-training-data@latest
+  reg_rate: 0.01
 environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
 compute: aml-cluster
 experiment_name: diabetes-train
