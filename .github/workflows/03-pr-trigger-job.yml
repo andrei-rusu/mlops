@@ -1,4 +1,4 @@
-name: Code checks
+name: Checking code quality
 
 on:
   pull_request:
