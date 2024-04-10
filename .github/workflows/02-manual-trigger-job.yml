@@ -18,7 +18,7 @@ jobs:
     - name: Azure login
       uses: azure/login@v1
       with:
-        creds: ${{env.AZURE_CREDENTIALS}}
+        creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Trigger Azure Machine Learning job
       run: |
         az ml job create -f src/job_dev.yml -g ar5g15-rg -w dp_prep
@@ -34,7 +34,7 @@ jobs:
     - name: Azure login
       uses: azure/login@v1
       with:
-        creds: ${{env.AZURE_CREDENTIALS}}
+        creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Trigger Azure Machine Learning job
       run: |
         az ml job create -f src/job_prod.yml -g ar5g15-rg -w dp_prep
