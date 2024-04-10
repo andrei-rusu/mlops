@@ -46,7 +46,7 @@ def split_data(df):
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
-    LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
+    LogisticRegression(C=1 / reg_rate, solver="liblinear").fit(X_train, y_train)
 
 
 def parse_args():
@@ -62,7 +62,7 @@ def parse_args():
     # parse args
     args = parser.parse_args()
 
-    # return args
+    # return the args
     return args
 
 
