@@ -1,0 +1,40 @@
+name: Checking code quality
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  job1:
+    name: linting
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v3
+    - name: Use Python version 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.8'
+    - name: Install Flake8
+      run: |
+        python -m pip install flake8
+    - name: Run linting tests
+      run: | 
+        flake8 --config tests/.flake8
+  job2:
+    name: unit-testing
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v3
+    - name: Use Python version 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.8'
+    - name: Install pytest
+      run: |
+        python -m pip install pytest mlflow
+    - name: Run unit tests
+      run: | 
+        pytest
